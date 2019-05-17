@@ -125,7 +125,7 @@ def trove_query_cached(q: str, n: int=100, cachefile: str='articles.json', force
         with open(cachefile) as fd:
             articles = json.load(fd)
     else:
-        articles = utils.trove_query(q, n)
+        articles = trove_query(q, n)
 
     articles = pd.DataFrame(articles)
     articles.index = articles.id
